@@ -32,10 +32,10 @@ interface TabContentProps {
 export const TabContent: React.FC<TabContentProps> = ({ file }) => {
   const root = useRef();
   useEffect(() => {
-    console.log({file})
+    const files = file.join(',').replaceAll('/', '%2F');
     sdk.embedGithubProject(
       root.current,
-      `gothinkster/angular-realworld-example-app?file${file.join(',')}`,
+      `gothinkster/angular-realworld-example-app?file=${files}`,
       {
         view: "editor"
       }

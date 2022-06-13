@@ -33,10 +33,12 @@ export const TabContent: React.FC<TabContentProps> = ({ file }) => {
   const root = useRef();
   useEffect(() => {
     const files = file.join(',').replaceAll('/', '%2F');
+    console.log({files})
     sdk.embedGithubProject(
       root.current,
-      `sulco/storybook-demo2?file=${files}`,
+      `sulco/storybook-demo2`,
       {
+        openFile: file.join(','),
         view: "editor"
       }
     );

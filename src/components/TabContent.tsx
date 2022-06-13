@@ -35,7 +35,7 @@ export const TabContent: React.FC<TabContentProps> = ({ file }) => {
     const files = file.join(',').replaceAll('/', '%2F');
     sdk.embedGithubProject(
       root.current,
-      `gothinkster/angular-realworld-example-app?file=${files}`,
+      `sulco/storybook-demo2?file=${files}`,
       {
         view: "editor"
       }
